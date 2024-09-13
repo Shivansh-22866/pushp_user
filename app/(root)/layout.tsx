@@ -4,6 +4,7 @@ import "../globals.css";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "../components/Navbar";
+import ToasterProvider from "@/lib/providers/ToasterProvider";
 
 export const metadata: Metadata = {
   title: "Pushp Store",
@@ -21,6 +22,7 @@ export default function RootLayout({
         className={`antialiased`}
       >
         <ClerkProvider>
+          <ToasterProvider />
           <Navbar/>
           {children}
         </ClerkProvider>

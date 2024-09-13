@@ -54,7 +54,7 @@ const useCart = create(
       },
       decreaseQuantity: (idToDecrease: string) => {
         const newCartItems = get().cartItems.map((cartItem) =>
-          cartItem.item._id === idToDecrease
+          cartItem.item._id === idToDecrease && cartItem.quantity > 1
             ? { ...cartItem, quantity: cartItem.quantity - 1 }
             : cartItem
         );
