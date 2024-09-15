@@ -31,7 +31,7 @@ const Cart = () => {
       if (!user) {
         router.push("sign-in");
       } else {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL3}/checkout`, {
           method: "POST",
           body: JSON.stringify({ cartItems: cart.cartItems, customer }),
         });
@@ -54,7 +54,7 @@ const Cart = () => {
         ) : (
           <div>
             {cart.cartItems.map((cartItem) => (
-              <div className="w-full flex max-sm:flex-col max-sm:gap-3 hover:bg-grey-1 px-4 py-3 items-center max-sm:items-start justify-between">
+              <div className="w-full flex max-sm:flex-col max-sm:gap-3 hover:bg-[#f6c90e] px-4 py-3 items-center max-sm:items-start justify-between">
                 <div className="flex items-center sm:w-96">
                   <Image
                     src={cartItem.item.media[0]}
@@ -94,7 +94,7 @@ const Cart = () => {
         )}
       </div>
 
-      <div className="w-1/3 max-lg:w-full flex flex-col gap-8 bg-grey-1 rounded-lg px-4 py-5">
+      <div className="w-1/3 max-lg:w-full flex flex-col gap-8 bg-[#f6c90e] rounded-lg px-4 py-5">
         <p className="text-heading4-bold pb-4">
           Summary{" "}
           <span>{`(${cart.cartItems.length} ${
@@ -103,7 +103,7 @@ const Cart = () => {
         </p>
         <div className="flex justify-between text-body-semibold">
           <span>Total Amount</span>
-          <span>$ {totalRounded}</span>
+          <span>₹ {totalRounded}</span>
         </div>
         <button
           className="border rounded-lg text-body-bold bg-white py-3 w-full hover:bg-black hover:text-white"
