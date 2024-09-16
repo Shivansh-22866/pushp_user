@@ -49,6 +49,14 @@ const Navbar = () => {
         >
           Orders
         </Link>
+        <Link
+          href={""}
+          className={`hover:text-[#f6c90e] ${
+            pathname === "/orders" && "text-[#f6c90e]"
+          }`}
+        >
+          Orders
+        </Link>
       </div>
 
       <div className="flex gap-3 border border-grey-2 px-3 py-1 items-center rounded-lg bg-white">

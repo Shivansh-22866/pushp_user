@@ -1,6 +1,6 @@
 export const getCollections = async () => {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL2}/collections//`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/collections`);
 
         // Check if the response is successful (status code 200-299)
         if (!response.ok) {
@@ -20,7 +20,7 @@ export const getCollections = async () => {
 
 export const getProducts = async () => {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products//`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`);
 
         // Check if the response is successful (status code 200-299)
         if (!response.ok) {
@@ -40,7 +40,7 @@ export const getProducts = async () => {
   }
 
   export const getProductDetails = async (productId: string) => {
-    const product = await fetch(`${process.env.NEXT_PUBLIC_API_URL3}/products/${productId}`)
+    const product = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/${productId}`)
     return await product.json()
   }
 
@@ -50,7 +50,7 @@ export const getProducts = async () => {
   }
 
   export const getCollectionDetails = async (collectionId: string) => {
-    const collection = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/collections/${collectionId}/`)
+    const collection = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/collections/${collectionId}`)
     return await collection.json()
   }
 
