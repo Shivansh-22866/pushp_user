@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div className="sticky top-0 z-10 py-2 px-10 flex gap-2 justify-between items-center bg-[#8B4513] max-sm:px-2">
-      <Link href="/">
+      <Link href="https://66e77103d16ab573038f4886--bucolic-gumdrop-791bcf.netlify.app/">
         <Image src="/logo.png" alt="logo" className="p-4" width={130} height={100} />
       </Link>
 
