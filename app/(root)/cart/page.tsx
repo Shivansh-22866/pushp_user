@@ -54,7 +54,7 @@ const Cart = () => {
         ) : (
           <div>
             {cart.cartItems.map((cartItem) => (
-              <div key={cartItem} className="w-full flex max-sm:flex-col max-sm:gap-3 hover:bg-[#f6c90e] px-4 py-3 items-center max-sm:items-start justify-between">
+              <div key={cartItem.item._id} className="w-full flex max-sm:flex-col max-sm:gap-3 hover:bg-[#f6c90e] px-4 py-3 items-center max-sm:items-start justify-between">
                 <div className="flex items-center sm:w-96">
                   <Image
                     src={cartItem.item.media[0]}
