@@ -23,6 +23,7 @@ const HeartFavorite = ({ product, updateSignedInUser }: HeartFavoriteProps) => {
       const res = await fetch("/api/users");
       const data = await res.json();
       setIsLiked(data.wishlist.includes(product._id));
+      console.log(loading)
       setLoading(false);
     } catch (err) {
       console.log("[users_GET]", err);

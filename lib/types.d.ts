@@ -29,7 +29,7 @@ type CollectionType = {
   };
 
   type OrderType = {
-    shippingAddress: Object;
+    shippingAddress: object;
     _id: string;
     customerClerkId: string;
     products: [OrderItemType]
