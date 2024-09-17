@@ -4,7 +4,7 @@ import Loader from "@/app/components/Loader"
 import ProductCard from "@/app/components/ProductCard"
 import { getProductDetails } from "@/lib/actions"
 import { useUser } from "@clerk/nextjs"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 
 const Wishlist = () => {
   const { user } = useUser()
@@ -13,7 +13,7 @@ const Wishlist = () => {
   const [signedInUser, setSignedInUser] = useState<UserType | null>(null)
   const [wishlist, setWishlist] = useState<ProductType[]>([])
 
-  const getUser = async () => {
+  const getUser = useCallback(async () => {
     try {
       const res = await fetch("/api/users")
       const data = await res.json()
@@ -22,15 +22,15 @@ const Wishlist = () => {
     } catch (err) {
       console.log("[users_GET", err)
     }
-  }
+  }, [])
 
   useEffect(() => {
     if (user) {
       getUser()
     }
-  }, [user])
+  }, [user, getUser])
 
-  const getWishlistProducts = async () => {
+  const getWishlistProducts = useCallback(async () => {
     setLoading(true)
 
     if (!signedInUser) return
@@ -42,18 +42,17 @@ const Wishlist = () => {
 
     setWishlist(wishlistProducts)
     setLoading(false)
-  }
+  }, [signedInUser])
 
   useEffect(() => {
     if (signedInUser) {
       getWishlistProducts()
     }
-  }, [signedInUser])
+  }, [signedInUser, getWishlistProducts])
 
   const updateSignedInUser = (updatedUser: UserType) => {
     setSignedInUser(updatedUser)
   }
-
 
   return loading ? <Loader /> : (
     <div className="px-10 py-5">

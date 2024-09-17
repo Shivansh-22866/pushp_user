@@ -50,12 +50,12 @@ const Navbar = () => {
           Orders
         </Link>
         <Link
-          href={""}
+          href={"https://66e78df8bc17b48ec7f08c68--dulcet-croquembouche-5b79af.netlify.app/"}
           className={`hover:text-[#f6c90e] ${
-            pathname === "/orders" && "text-[#f6c90e]"
+            pathname === "/knv" && "text-[#f6c90e]"
           }`}
         >
-          Orders
+          VR(Experimental)
         </Link>
       </div>
 
